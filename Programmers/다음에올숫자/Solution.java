@@ -1,9 +1,6 @@
 package Programmers.다음에올숫자;
 
-import java.util.HashMap;
 import java.util.Scanner;
-
-import javax.swing.event.SwingPropertyChangeSupport;
 
 class Solution {
     public int solution(int[] common) {
