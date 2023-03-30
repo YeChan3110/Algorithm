@@ -1,4 +1,5 @@
 package Programmers.다음에올숫자;
+
 import java.util.Scanner;
 
 class Solution {
