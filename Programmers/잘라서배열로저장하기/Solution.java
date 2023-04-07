@@ -19,13 +19,13 @@ public class Solution {
         if(my_str.length() % n != 0){
             answer[answer.length-1] = my_str.substring(idx);
         }
-        for(int i = 0 ; i < answer.length; i++){
-            System.out.println(answer[i]);
-        }
+        // for(int i = 0 ; i < answer.length; i++){
+        //     System.out.println(answer[i]);
+        // }
         return answer;
 
     }
     public static void main(String[] args) {
-        new Solution().solution("abcddddddde", 3);
+        new Solution().solution("123456789", 3);
     }
 }
