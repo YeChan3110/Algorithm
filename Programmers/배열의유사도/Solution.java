@@ -8,12 +8,12 @@ public class Solution {
 
         HashSet hs = new HashSet<>();
 
-        for(String s : s1){
-            hs.add(s);
+        for(String str : s1){
+            hs.add(str);
         }
 
-        for(String s : s2){
-            if(hs.contains(s)){
+        for(String str : s2){
+            if(hs.contains(str)){
                 answer++;
             }
         }
@@ -23,7 +23,7 @@ public class Solution {
 
     public static void main(String[] args) {
         String[] a = {"a","b","d"};
-        String[] b = {"a","d","b"};
+        String[] b = {"a","d","c"};
         int sl = new Solution().solution(a, b);
         System.out.println(sl);
     }
