@@ -2,8 +2,9 @@ package Programmers.잘라서배열로저장하기;
 
 public class Solution {
     public String[] solution(String my_str, int n) {
-        String[] answer = new String[(my_str.length()/n)+1];
-        
+        String[] answer = new String[(my_str.length() / n) + (my_str.length() % n == 0 ? 0 : 1)];
+        // 문자열이 n개로 떨어지지 않을 때
+
         int idx = 0;
         int num = n;
         for(int i = 0; i < my_str.length() / n; i++){
@@ -19,9 +20,7 @@ public class Solution {
         if(my_str.length() % n != 0){
             answer[answer.length-1] = my_str.substring(idx);
         }
-        // for(int i = 0 ; i < answer.length; i++){
-        //     System.out.println(answer[i]);
-        // }
+
         return answer;
 
     }
