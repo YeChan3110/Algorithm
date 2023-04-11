@@ -1,4 +1,4 @@
-package Programmers.레벨1.신규아이디추천;
+package Programmers.레벨1.kakao신규아이디추천;
 
 public class Solution {
     public String solution(String new_id) {
@@ -31,7 +31,7 @@ public class Solution {
             new_id = delDot(new_id);
         // 7단계 new_id의 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙입니다.
             if(new_id.length() <= 2){
-                sb.setLength(0);;
+                sb.setLength(0);
                 sb.append(new_id);
                 for(int i = new_id.length(); i < 3; i++){
                     sb.append(new_id.charAt(new_id.length()-1));
