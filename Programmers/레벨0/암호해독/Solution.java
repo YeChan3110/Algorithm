@@ -7,7 +7,7 @@ public class Solution {
 
         for(int i = 0; i < cipher.length()/code;i++){
             if(multi == 0) multi = code;
-            sb.append(cipher.charAt(code-1));
+            sb.append(cipher.charAt(multi-1));
             multi += code;
         }
         
