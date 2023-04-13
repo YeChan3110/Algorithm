@@ -1,19 +1,22 @@
 package Programmers.레벨0.문자열정렬하기1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Solution {
-    public ArrayList<String> solution(String my_string) {
-        ArrayList<String> arr = new ArrayList<>();
+    public ArrayList<Integer> solution(String my_string) {
+        ArrayList<Integer> arr = new ArrayList<>();
         String regex = "[0-9]";
 
         for(char c : my_string.toCharArray()){
             String a = String.valueOf(c);
             if(String.valueOf(c).matches(regex)){
-                arr.add(String.valueOf(c));
+                arr.add(Integer.parseInt(String.valueOf(c)));
             }
         }
-        System.out.println(arr);
+        
+        Collections.sort(arr);
         return arr;
     }
 
