@@ -9,16 +9,11 @@ public class Solution {
         int num = 0;
 
         for(int i : num_list){
-            System.out.println("==========");
-            System.out.println(insert[0]);
-            System.out.println(insert[1]);
-            System.out.println("==========");
-            if(insert[insert.length-1] != 0){
+            if(num == n){ 
                 answer[count] = insert;
                 insert = new int[n];
                 count++;
                 num = 0;
-                System.out.println(answer);
             }
 
             insert[num] = i;
