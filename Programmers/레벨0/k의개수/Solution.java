@@ -3,14 +3,20 @@ package Programmers.레벨0.k의개수;
 public class Solution {
     public int solution(int i, int j, int k) {
         int answer = 0;
-        String sk = Integer.toString(k);
-    
-        for(int in = i; in <= j; in++){
-            if(Integer.toString(in).contains(sk)){
-                answer++;
+
+        for (int l = i; l <= j; l++) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(l);
+
+            int length = sb.length();
+
+            for (int r = 0; r < length; r++) {
+                if ((sb.charAt(r) - '0') == k) {
+                    answer++;
+                }
             }
         }
-    
+
         return answer;
     }
     public static void main(String[] args) {
