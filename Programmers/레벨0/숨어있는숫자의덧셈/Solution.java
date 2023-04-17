@@ -13,7 +13,7 @@ public class Solution {
             String match = matcher.group();
             answer += Integer.parseInt(match);
         }
-        System.out.println(answer);
+
         return answer;
     }
     public static void main(String[] args) {
