@@ -1,5 +1,7 @@
 package Programmers.레벨0.한번만등장한문자;
 
+import java.util.Arrays;
+
 public class Solution {
     public String solution(String s) {
         String answer = "";
@@ -19,6 +21,9 @@ public class Solution {
                 sb.append(c);
             }
         }
+        char[] cArr = sb.toString().toCharArray();
+        Arrays.sort(cArr);
+        sb = new StringBuilder(new String(cArr));
         answer = sb.toString();
         return answer;
     }
