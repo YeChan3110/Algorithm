@@ -4,26 +4,26 @@ import java.util.*;
 
 public class Solution {
     public int[] solution(int[] arr) {
-        ArrayList<Integer> list = new ArrayList<>();
-        int target = 0;
-
-        for(int i = 0 ; i < arr.length; i++){
-            if(arr[i] == 2){
-                target = 1;
-                list.add(i);
-                for(int j = i+1 ; j < arr.length; i++){
-                    list.add(j);
-                    if(arr[j] == 2){
-                        break;
-                    }
+        int startIdx = -1;
+        int endIdx = -1;
+        int minLength = Integer.MAX_VALUE;
+        
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 2) {
+                if (startIdx == -1) {
+                    startIdx = i;
+                }
+                endIdx = i;
+                if (endIdx - startIdx + 1 < minLength) {
+                    minLength = endIdx - startIdx + 1;
                 }
             }
         }
         
-        if(target == 0){list.add(-1);}
-
-        int[] answer = new int[list.size()];
-
-        return answer;
+        if (startIdx == -1) {
+            return new int[]{-1};
+        } else {
+            return Arrays.copyOfRange(arr, startIdx, endIdx+1);
+        }
     }
 }
