@@ -11,10 +11,6 @@ public class Solution {
                 for(int j = 0; j < arr.length; j++){
                     if(query[i] == arr[j]){
                         answer = Arrays.copyOfRange(answer, 0, j);
-                        for(int z = 0; z < answer.length; z++){
-                            System.out.println(answer[z]);
-                        }
-                        System.out.println("=====================");
                     }
                 }
                 
@@ -22,14 +18,11 @@ public class Solution {
                 for(int j = 0; j < arr.length; j++){
                     if(query[i] == arr[j]){
                         answer = Arrays.copyOfRange(answer, query[i], arr.length);  
-                        for(int z = 0; z < answer.length; z++){
-                            System.out.println(answer[z]);
-                        }
-                        System.out.println("=====================");
                     }
                 }
             }
         }
+        
         return answer;
     }
     public static void main(String[] args) {
