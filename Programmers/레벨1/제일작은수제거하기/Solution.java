@@ -8,20 +8,18 @@ public class Solution {
         int small = 0;
 
         if(arr.length == 1){
-            int[] answer = new int[1];
-            answer[0] = -1;
-            return answer;
+            arr[0] = -1;
+            return arr;
         }
 
         for(int i : arr){
-            System.out.println(small);
             if(small == 0){
                 small = i;
             }else if(i < small){
                 small = i;
             };
         }
-        System.out.println(small);
+
         for(int i = 0; i < arr.length; i++){
             if(arr[i] != small){
                 list.add(arr[i]);
