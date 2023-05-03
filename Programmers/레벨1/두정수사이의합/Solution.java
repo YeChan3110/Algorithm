@@ -7,14 +7,18 @@ public class Solution {
         long answer = 0;
         ArrayList<Long> list = new ArrayList<>();
 
+        if(a > b){
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+
         for(int i = a; i <= b; i++){
             list.add((long)i);
         }
-        System.out.println(list);
+
         for(int i = 0; i < list.size(); i++){
-            System.out.println(list.get(i));
-            System.out.println(answer);
-            answer *= list.get(i);
+            answer += list.get(i);
         }
         return answer;
     }
