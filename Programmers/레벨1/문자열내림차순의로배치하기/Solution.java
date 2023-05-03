@@ -9,6 +9,7 @@ public class Solution {
             ascii[i] = s.toCharArray()[i];
         }
 
+        // bubble정렬 말고 Stringbuilder에도 reverse()함수가 있음.
         for (int i = ascii.length - 1; i >= 0; i--) {
             for (int j = ascii.length - 1; j > ascii.length - 1 - i; j--) {
                 if (ascii[j] > ascii[j - 1]) {
@@ -22,7 +23,7 @@ public class Solution {
         for(int i : ascii){
             sb.append(String.valueOf((char)i));
         }
-
+        
         return sb.toString();
     }
 
