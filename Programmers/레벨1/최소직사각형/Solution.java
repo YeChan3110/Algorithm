@@ -2,8 +2,6 @@ package Programmers.레벨1.최소직사각형;
 
 public class Solution {
     public int solution(int[][] sizes) {
-        int answer = 0;
-        int area = 0;
         int width = 0;
         int height = 0;
 
@@ -23,25 +21,9 @@ public class Solution {
                     height = sizes[i][0];
                 }
             }
-
-            if(area <  sizes[i][0] * sizes[i][1]){
-
-            }
         }
 
-        System.out.println(area);
-        System.out.println(width);
-        System.out.println(height);
-
-        for(int i = 0; i < sizes.length; i++){
-            if(area <  sizes[i][0] * sizes[i][1]){
-                area =  sizes[i][0] * sizes[i][1];
-                width = sizes[i][0];
-                height = sizes[i][1];
-            }
-        }
-
-        return answer;
+        return width * height;
     }
     public static void main(String[] args) {
         int[][] sizes = {{14, 4}, {19, 6}, {6, 16}, {18, 7}, {7, 11}};
