@@ -3,23 +3,22 @@ package Programmers.레벨1.이상한문자만들기;
 public class Solution {
     public String solution(String s) {
         String answer = "";
-        StringBuilder sb = new StringBuilder();
-        int btn = 0;
-        for(char c : s.toCharArray()){
-            if(btn == 0){
-                btn = 1;
-                sb.append(String.valueOf(c).toUpperCase());
-            }else{
-                btn = 0;
-                sb.append(String.valueOf(c).toLowerCase());
+        String[] str = s.split("");
+        
+        int idx = 0;
+        for(int i=0; i<str.length; i++) {
+            if(str[i].equals(" ")) {
+                idx = 0;
+            } else if(idx % 2 == 0) {
+                str[i] = str[i].toUpperCase();
+                idx++;
+            } else if(idx % 2 != 0) {
+                str[i] = str[i].toLowerCase();
+                idx++;
             }
-        }
-        answer = sb.toString();
-        System.out.println(sb.toString().indexOf(0));
-        if(answer.charAt(0) == ' '){
-            answer = sb.toString().substring(1);
-        }
-        System.out.println(answer);
+            answer += str[i];
+        } 
+        
         return answer;
     }
     public static void main(String[] args) {
