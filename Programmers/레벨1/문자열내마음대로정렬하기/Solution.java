@@ -1,37 +1,24 @@
 package Programmers.레벨1.문자열내마음대로정렬하기;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Solution {
     public String[] solution(String[] strings, int n) {
-        String[] answer = new String[strings.length];
-        String[] firArr = new String[strings.length];
-        String[] secArr = new String[strings.length];
-        int fir = 0;
+        String[] answer = {};
+        ArrayList<String> list = new ArrayList<>();
 
         for(int i = 0; i < strings.length; i++){
-            firArr[i] = strings[i].substring(n,n + 1) + i;
+            list.add(strings[i].charAt(n) + strings[i]);
         }
 
-        Arrays.sort(firArr);
+        Collections.sort(list);
 
-        for(int i = 0; i < firArr.length; i++){
-            for(int j = 0; j < firArr.length; j++){
-                if(firArr[i].substring(0, 1).equals(firArr[j].substring(0, 1))){
-                    if(fir == 0){
-                        System.out.println("str : " + strings[i]);
-                        secArr[i] = strings[i];
-                        fir++;
-                    }else{
-                        secArr[i] = strings[j];
-                    }
-                    
-                }
-            }
+        answer = new String[list.size()];
+
+        for(int i = 0; i < list.size(); i++){
+            answer[i] = list.get(i).substring(1, list.get(i).length());
         }
-        for(String str : secArr){
-            System.out.println(str);
-        }
+
         return answer;
     }
     public static void main(String[] args) {
