@@ -61,6 +61,6 @@ public class Solution {
         int[] arr1 = {9,20,28,18,11};
         int[] arr2 = {30,1,21,17,28};
 
-        String[] str = new Solution().solution(5, arr1, arr2);
+        new Solution().solution(5, arr1, arr2);
     }
 }
