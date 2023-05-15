@@ -5,9 +5,6 @@ import java.util.ArrayList;
 public class Solution {
     public String[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = toMap(toBinaryMap(n, arr1),toBinaryMap(n, arr2),n);
-        for(String str : answer){
-            System.out.println(str);
-        }
         return answer;
     }
 
