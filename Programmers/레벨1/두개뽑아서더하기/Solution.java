@@ -4,43 +4,31 @@ import java.util.*;
 
 public class Solution {
     public int[] solution(int[] numbers) {
-        ArrayList<Integer> list = new ArrayList<>();
-
-        for(int i = 0; i < numbers.length; i++){
-            int index = i;
-            for(int j = 0; j < numbers.length; j++){
-                if(index == j){
-                    continue;
-                }else{
-                    list.add(numbers[i] + numbers[j]);
-                }
-            }
-        }
-        System.out.println(list);
-
-        HashSet<Integer> distinctSet = new HashSet<>();
-        for (int i = 0; i < list.size(); i++) {
-            boolean isExist = false;
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(i).equals(list.get(j))) {
-                    isExist = true;
-                    break;
-                }
-            }
-            if (!isExist) {
-                distinctSet.add(list.get(i));
+        // hashset 이 아닌 Treeset을 이용하면 중복검사를 하면서 정렬도 된다고 함
+        HashSet<Integer> set = new HashSet<>();
+        
+        for(int i = 0; i < numbers.length; i++) {
+            for(int j = i + 1; j < numbers.length; j++) {
+                set.add(numbers[i] + numbers[j]);
             }
         }
         
-        int[] answer = new int[distinctSet.size()];
+        int[] answer = new int[set.size()];
         int index = 0;
-        for (Integer element : distinctSet) {
-            answer[index++] = element;
+        for (Integer i : set) {
+            answer[index++] = i;
         }
-        
-        for(int i : answer){
-            System.out.println(i);
+
+        for(int i = 0; i < answer.length; i++){
+            for(int j = i + 1; j < answer.length; j++){
+                if(answer[i] >= answer[j]){
+                    int temp = answer[i];
+                    answer[i] = answer[j];
+                    answer[j] = temp;
+                }
+            }
         }
+
         return answer;
     }
     public static void main(String[] args) {
