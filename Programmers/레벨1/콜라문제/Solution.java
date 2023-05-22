@@ -1,0 +1,15 @@
+package Programmers.레벨1.콜라문제;
+
+public class Solution {
+    public int solution(int a, int b, int n) {
+        int answer = 0;
+        while(n/a>0) {
+            answer+=(n/a)*b;
+            n=(n/a)*b+n%a;
+        }
+        return answer;
+    }
+    public static void main(String[] args) {
+        new Solution().solution(3, 1, 20);
+    }
+}
