@@ -14,7 +14,7 @@ public class Solution {
         daysIndex += b - 1;
         
         answer = days[daysIndex % 7];
-        System.out.println(answer);
+
         return answer;
     }
 
