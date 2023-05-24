@@ -20,9 +20,6 @@ public class Solution {
             }
         }
 
-        for(int i : answer){
-            System.out.println(i);
-        }
         return answer;
     }
 
