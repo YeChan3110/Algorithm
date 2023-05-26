@@ -5,8 +5,6 @@ import java.io.*;
 
 public class Solution {
     public int[] solution(int n) throws IOException{
-        System.out.println("입력하신 숫자 " + n + " 의 소인수 분해 결과는 다음과 같습니다.");
-
         HashSet<Integer> set = new HashSet<>();
 
         for(int i = 2; i <= n; i++){
@@ -35,17 +33,12 @@ public class Solution {
                 }
             }
         }
-        System.out.print(">> ");
-        for(int i : answer){
-            System.out.print(i + ", ");
-        }
+
         return answer;
     }
 
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("소인수 분해 할 숫자를 입력해주세요.");
-        System.out.print(">> ");
         new Solution().solution(Integer.parseInt(br.readLine()));
     }
 }
