@@ -6,12 +6,18 @@ public class Solution {
     public int solution(int[] nums) {
         int answer = 0;
         HashSet<Integer> set = new HashSet<>();
+        
         for(int i : nums){
             if(!set.contains(i)){
                 set.add(i);
             }
         }
-        System.out.println(set.size());
+        
+        if(set.size() > nums.length / 2){
+            answer = nums.length / 2;
+        }else{
+            answer = set.size();
+        }
 
         return answer;
     }
