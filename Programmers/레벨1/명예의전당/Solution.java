@@ -1,22 +1,19 @@
 package Programmers.레벨1.명예의전당;
 
+import java.util.*;
+
 public class Solution {
     public int[] solution(int k, int[] score) {
         int[] answer = new int[score.length];
-        int[] honor = new int[k];
+        PriorityQueue<Integer> q = new PriorityQueue<>();
 
-        for(int i = 0 ; i < k ; i++){
-            honor[i] = score[i];
+        for (int i = 0; i < score.length; i++) {
+            q.add(score[i]);
+            if (q.size() > k) {
+                q.poll();
+            }
+            answer[i] = q.peek();
         }
-
-        // for(int i = 0; i < honor.length; i++){
-            
-        // }
-        
-        for(int i : honor){
-            System.out.println(i);
-        }
-
         return answer;
     }
 
