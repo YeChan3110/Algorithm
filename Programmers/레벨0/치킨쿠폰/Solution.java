@@ -2,14 +2,15 @@ package Programmers.레벨0.치킨쿠폰;
 
 public class Solution {
     public int solution(int chicken) {
-        int answer = 0;
-        System.out.println(chicken);
-        while(chicken > 10){
-            System.out.println(chicken);
-            answer += chicken / 10;
-        }
+		int coupon = chicken;
+		int count = 0;
 
-        return answer;
+		while (coupon >= 10) {
+			int leftCoupon = coupon % 10;
+			count += coupon / 10;
+			coupon = leftCoupon + coupon / 10;
+		}
+		return count;
     }
 
     public static void main(String[] args) {
