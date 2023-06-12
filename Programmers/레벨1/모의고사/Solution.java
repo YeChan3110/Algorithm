@@ -13,6 +13,7 @@ public class Solution {
         int maxCount = Math.max(fircnt, Math.max(seccnt, thicnt));
 
         ArrayList<Integer> answerList = new ArrayList<>();
+        
         if (fircnt == maxCount) {
             answerList.add(1);
         }
