@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Solution {
     public int[] solution(String[] id_list, String[] report, int k) {
+        
         int[] answer = new int[id_list.length];
 
         Map<String, String> reportUser = new HashMap<>();
