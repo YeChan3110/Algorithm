@@ -6,10 +6,15 @@ public class Solution {
         String[] str = s.toLowerCase().split("");
         boolean space = true;
 
-        for(String st : str) {
-            answer += space ? st.toUpperCase() : st;
-            space = st.equals(" ") ? true : false;
+        for (String st : str) {
+            if (space) {
+                answer += st.toUpperCase();
+            } else {
+                answer += st;
+            }
+            space = st.equals(" ");
         }
+
         return answer;
     }
 }
