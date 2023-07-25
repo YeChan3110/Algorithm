@@ -5,28 +5,29 @@ public class Solution {
     static int zero = 0;
 
     public int[] solution(String s) {
-        int[] answer = {};
-        System.out.println(del(s));
-        System.out.println(count);
-        System.out.println(zero);
+        int[] answer = new int[2];
+        del(s);
+        answer[0] = count;
+        answer[1] = zero;
         return answer;
     }
 
     public static String del(String s){
+        if(s.equals("1"))
+        return "";
+
+        int cnt = 0;
 
         for(char c : s.toCharArray()){
             if(c == '0'){
+                cnt++;
                 zero++;
             }
         }
 
-        if(s.equals("10")){
-            count++;
-            zero++;
-            return "1";
-        }
-
-        return s;
+        int length = s.length() - cnt;
+        count++;
+        return del(Integer.toString(length,2));
     }
 
     public static void main(String[] args) {
