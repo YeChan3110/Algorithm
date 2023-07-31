@@ -4,18 +4,12 @@ public class Solution {
     public int solution(int n) {
         int answer = 0;
 
-        for(int i = 0; i < n; i ++){
-            answer ++;
-
-            if(answer % 3 == 0){
-                answer ++;
+        for (int i = 1; i <= n; i++) {
+            answer++;
+            if (answer % 3 == 0 || String.valueOf(answer).contains("3")) {
+                i--;
             }
-            while(String.valueOf(answer).contains("3")){
-                answer ++;
-            }
-            System.out.println("i : " + (i+1) + " // answer : " + answer);
         }
-
         return answer;
     }
     public static void main(String[] args) {
