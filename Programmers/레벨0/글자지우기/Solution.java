@@ -2,13 +2,18 @@ package Programmers.레벨0.글자지우기;
 
 public class Solution {
     public String solution(String my_string, int[] indices) {
-        String answer = "";
         String[] str = my_string.split("");
-        for(int i = 0; i < my_string.length(); i++){
-            System.out.println(str[i]);
+        StringBuilder sb = new StringBuilder();
+
+        for(int idx : indices){
+            str[idx] = "";
         }
 
-        return answer;
+        for(String s : str){
+            sb.append(s);
+        }
+        
+        return sb.toString();
     }
     public static void main(String[] args) {
         String my_string = "apporoograpemmemprs";
