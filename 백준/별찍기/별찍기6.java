@@ -13,8 +13,6 @@ public class 별찍기6 {
         int count = Integer.parseInt(br.readLine());
         br.close();
         int star = count;
-        int blank = count - 1;
-
         
 
         bw.flush();
